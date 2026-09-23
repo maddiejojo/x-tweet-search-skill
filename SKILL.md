@@ -40,7 +40,7 @@ This skill is read-only. Do not reply, like, follow, message, or modify any acco
    - `site:x.com/status "BRAND NAME" (question OR problem OR love OR review)`
    - `site:x.com/status "EVENT OR CAMPAIGN"`
 4. Apply supported time filters. If exact filtering is unavailable, add date terms and verify visible timestamps on opened results.
-5. Open promising results when possible. Record the canonical X URL, author, visible date, referenced LHM entity, and post meaning. Label search-snippet-only items as snippet-derived.
+5. Open promising results when possible. For every reported post or comment, record the author's display name and X handle, the exact canonical `x.com/<account>/status/<id>` link, visible date, referenced LHM entity, and post meaning. If the author or exact post link cannot be verified, do not place the item in the main results table; list it separately as an unverified search lead.
 6. Exclude irrelevant namesakes and duplicates. Track cross-portfolio mentions separately when one post concerns multiple LHM entities.
 7. Classify sentiment as positive, neutral, negative, or unclear. Tag themes such as customer experience, employee experience, community impact, development, health care, sports performance, venue experience, product or service feedback, leadership, philanthropy, safety, and misinformation.
 8. Flag potential high-priority items without overstating them: credible safety or patient-care concerns, legal or regulatory claims, discrimination or harassment allegations, coordinated negative attention, rapidly spreading misinformation, threats, or issues affecting multiple portfolio companies.
@@ -52,7 +52,7 @@ Return:
 
 - An executive summary of sentiment, notable changes, and the most important themes.
 - Results grouped by LHM platform or portfolio company.
-- A source table with author, date when available, LHM entity, brief paraphrase, sentiment, priority, verification status, and direct citation.
+- A source table in which every row includes **Said by** (author display name and X handle), **Post/comment link** (a clickable direct URL to the exact X status), date when available, LHM entity, brief paraphrase, sentiment, priority, and verification status.
 - Recurring questions, complaints, praise, misinformation, and response opportunities.
 - A short “watch next” section for developing issues or follow-up searches.
 - A limitations note explaining that coverage reflects publicly indexed pages rather than the complete X timeline.
@@ -60,6 +60,7 @@ Return:
 ## Quality rules
 
 - Prefer direct `x.com/<account>/status/<id>` sources over aggregators or screenshots.
+- Never return an unattributed item or a result without a clickable link to the exact post or comment. Put incomplete search snippets in a separate “Unverified leads” section instead of the results table.
 - Distinguish verified post content from search snippets and internal LHM context.
 - Do not invent authors, text, dates, engagement, sentiment, affiliation, or completeness.
 - Do not treat criticism as a crisis solely because it is negative; prioritize using evidence, reach signals when available, credibility, severity, and relevance.
